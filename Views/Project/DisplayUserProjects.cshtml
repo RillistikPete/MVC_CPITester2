@@ -1,0 +1,26 @@
+﻿@model List<MVCTesterCPI2.Models.CpiProject>
+
+@{
+    ViewBag.Title = "DisplayUserProjects";
+}
+
+<h2>User Projects</h2>
+<div>
+    @foreach (var x in Model)
+    {
+        <h4>Program: @x.ProgramId</h4>
+        <h3>@x.Id: @x.ProjectName</h3>
+        <hr />
+        <h4>Program Office: @x.ProgramOffice</h4>
+        <h4>Project Class: @x.ProjClass</h4>
+        if (!string.IsNullOrEmpty(x.LastEditBy) && !string.IsNullOrWhiteSpace(x.LastEditBy))
+        {
+            <h4>Last Edited: @x.LastEditDate by @x.LastEditBy</h4>
+        }
+        else
+        {
+            <h4>Last Edited: @x.LastEditDate</h4>
+        }
+    }
+</div>
+

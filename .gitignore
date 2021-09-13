@@ -1,0 +1,6 @@
+packages.config
+packages
+/bin
+/obj
+/packages
+
