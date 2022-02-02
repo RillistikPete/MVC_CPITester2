@@ -4,4 +4,4 @@
 Allows interaction with APIs by using a simple user interface without the necessity of HTTP requests using external REST clients like Postman.
 Built using Microsoft.OWIN to implement ClientFactory and Polly (.NET Core tools) in .NET Framework.
 
-**See Infrastructure / Business Class**
+**See Infrastructure / EntityUpdater.Business.cs**
