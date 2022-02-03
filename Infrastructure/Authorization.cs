@@ -36,14 +36,6 @@ namespace MVCTesterCPI2.Models
 
         public static async Task<Login> GetCpiToken()
         {
-            // local
-            //var userObj = new CPIUser()
-            //{
-            //    ProgramID = 1,
-            //    CPIUsername = "melogin",
-            //    Password = "Password123456!"
-            //};
-
             int notFound = 404;
             int badRequest = 400;
             string _functionName = "GetCpiToken";
