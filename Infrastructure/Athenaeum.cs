@@ -28,29 +28,9 @@ namespace MVCTesterCPI2.Infrastructure
         {
             return await _cpiClient.GetListById<CpiProject>(resourceUri, userID, properties);
         }
-
-        //public async Task<HttpResponse<CpiProject>> GetEdfiStudentByStudentUniqueId(string resourceUri, string stdUniqueId, IDictionary<string, string> properties)
-        //{
-        //    return await _cpiClient.GetSingle<CpiProject>(resourceUri, stdUniqueId, properties);
-        //}
-
         #endregion
 
         #region CRUD
-        //public async Task<ServerResponse> UpdateStudentBadge(string id, BadgeStudent dto)
-        //{
-        //    return await _cpiClient.Put("studentBadges/", id, dto);
-        //}
-
-        //public async Task<ServerResponse> CreateStudentBadge(BadgeStudent badgeStudent)
-        //{
-        //    return await _cpiClient.Post("studentBadges/", badgeStudent);
-        //}
-
-        //public async Task<ServerResponse> PostToStudentHistoricals(StudentHistorical shObj)
-        //{
-        //    return await _cpiClient.Post("student-historicals/", shObj);
-        //}
         #endregion
 
         #region Data Retention Policy and GFI
