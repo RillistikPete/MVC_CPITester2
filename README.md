@@ -4,4 +4,4 @@
 Provides a simple user interface to replace the need of direct API requests using external REST clients.
 Built using asynchronous methods and Microsoft.OWIN to implement .NET tools inside .NET Framework.
 
-**See Infrastructure / EntityUpdater.Business.cs**
+**Core functionality inside Infrastructure folder**
