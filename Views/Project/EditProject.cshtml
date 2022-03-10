@@ -1,0 +1,27 @@
+@model MVCTesterCPI2.Models.CpiProject
+
+@{
+    ViewBag.Title = "EditProject";
+}
+
+<h2>EditProject</h2>
+
+@using (Html.BeginForm("EditProject", "Project", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Id)
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Version</label>
+        @Html.TextBoxFor(x => x.VersionIncrementSpiral, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Last Edited By</label>
+        @Html.TextBoxFor(x => x.LastEditBy, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+}
+
