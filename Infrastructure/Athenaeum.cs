@@ -50,7 +50,7 @@ namespace MVCTesterCPI2.Infrastructure
 
         public async Task<UpdGFIonPersonsPolicy> RunUpdGFIonPersons()
         {
-           return await _cpiClient.GetGFI("main:updGFIonPersons");
+           return await _cpiClient.GetGFI("main:updGFIonProjects");
         }
         #endregion
     }
