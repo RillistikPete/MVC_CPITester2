@@ -34,13 +34,6 @@ namespace MVCTesterCPI2.Controllers
 
         public async Task<ActionResult> About()
         {
-            //var content = "";
-            //HttpResponseMessage response = await _cpiClient.GetAsync(_cpiClient.BaseAddress);
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    content = await response.Content.ReadAsStringAsync();
-            //}
-            //ViewBag.Message = content;
             return View();
         }
 
