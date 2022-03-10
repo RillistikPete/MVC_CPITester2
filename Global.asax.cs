@@ -47,38 +47,34 @@ namespace MVCTesterCPI2
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            // UnityConfig.RegisterComponents();
-
-            //M.E.Hosting
-            //var hostBuilder = new HostBuilder();
-            //hostBuilder.ConfigureServices(ConfigureServices);
-            //var host = hostBuilder.Build();
-            //ServiceProvider = host.Services;
-
-            //System.Diagnostics.Debugger.Break();
+            // Microsoft Extensions Hosting:
+            // var hostBuilder = new HostBuilder();
+            // hostBuilder.ConfigureServices(ConfigureServices);
+            // var host = hostBuilder.Build();
+            // ServiceProvider = host.Services;
         }
 
-        //protected void Application_BeginRequest()
-        //{
-        //    RecordEvent("BeginRequest()");
-        //}
-        //protected void Application_AuthenticateRequest()
-        //{
-        //    RecordEvent("AuthenticateRequest()");
-        //}
-        //protected void Application_PostAuthenticateRequest()
-        //{
-        //    RecordEvent("PostAuthenticateRequest()");
-        //}
+        protected void Application_BeginRequest()
+        {
+           RecordEvent("BeginRequest()");
+        }
+        protected void Application_AuthenticateRequest()
+        {
+           RecordEvent("AuthenticateRequest()");
+        }
+        protected void Application_PostAuthenticateRequest()
+        {
+           RecordEvent("PostAuthenticateRequest()");
+        }
 
-        //protected void RecordEvent(string name)
-        //{
-        //    List<string> eventList = Application["events"] as List<string>;
-        //    if (eventList == null)
-        //    {
-        //        Application["events"] = eventList = new List<string>();
-        //    }
-        //    eventList.Add(name);
-        //}
+        protected void RecordEvent(string name)
+        {
+           List<string> eventList = Application["events"] as List<string>;
+           if (eventList == null)
+           {
+               Application["events"] = eventList = new List<string>();
+           }
+           eventList.Add(name);
+        }
     }
 }
