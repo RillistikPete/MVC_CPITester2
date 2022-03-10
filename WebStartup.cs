@@ -29,8 +29,6 @@ namespace MVCTesterCPI2
         public void Configuration(IAppBuilder app)
         {
             Debug.WriteLine("OWIN startup");
-            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
-
             var sv = new ServiceCollection();
             Configure(sv);
             var serviceProvider = sv.AddHttpClient().BuildServiceProvider();
@@ -38,12 +36,7 @@ namespace MVCTesterCPI2
             Models.Authorization.InitiateClients(httpClientFact);
             entityUpd = new EntityUpdater(new Athenaeum(new CpiClientBase(Models.Authorization._cpiClient)));
             Athenaeum ath = new Athenaeum(new CpiClientBase(Models.Authorization._cpiClient));
-            //sv.AddMvc().AddControllersAsServices();
             HomeController hc = new HomeController(Models.Authorization._cpiClient, entityUpd);
-            // SetupHomeController(Models.Authorization._cpiClient, entityUpd);
-            // ApiTesterController apiTester = new ApiTesterController(Models.Authorization._cpiClient);
-            //sv.AddHttpClient().AddHttpClient<CpiClientBase>();
-            //sv.AddHttpClient().AddHttpClient<HomeController>();
         }
 
         void Configure(IServiceCollection s)
