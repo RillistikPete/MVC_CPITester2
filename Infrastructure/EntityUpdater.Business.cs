@@ -35,7 +35,7 @@ namespace MVCTesterCPI2.Infrastructure
             else
             {
                 Debug.WriteLine($"Null projResponse.ResponseContent at GetCPIProjects({offset}");
-                // LoggerLQ.LogQueue($"Null projResponse.ResponseContent at GetCPIProjects({offset}");
+                LoggerLQ.LogQueue($"Null projResponse.ResponseContent at GetCPIProjects({offset}");
             }
             if (cpiProjList.Count > 0)
             {
@@ -66,7 +66,7 @@ namespace MVCTesterCPI2.Infrastructure
             else
             {
                 Debug.WriteLine($"Null projResponse.ResponseContent at GetCPIProjects({offset}");
-                // LoggerLQ.LogQueue($"Null projResponse.ResponseContent at GetCPIProjects({offset}");
+                LoggerLQ.LogQueue($"Null projResponse.ResponseContent at GetCPIProjects({offset}");
             }
             if (cpiProjList.Count > 0)
             {
@@ -82,7 +82,7 @@ namespace MVCTesterCPI2.Infrastructure
                         else
                         {
                             Debug.WriteLine($"Null result at RunEdfiOdsSync()");
-                            // LoggerLQ.LogQueue($"Null result at RunEdfiOdsSync()");
+                            LoggerLQ.LogQueue($"Null result at RunEdfiOdsSync()");
                         }
                     }
                     catch (Exception exc)
@@ -101,35 +101,9 @@ namespace MVCTesterCPI2.Infrastructure
             }
             catch (Exception e)
             {
-                //_logger.LogInformation($"Error in synchronizing batch {batchNumber} of enrollments. {e.Message}");
-                //LoggerLQ.LogQueue($"Error in synchronizing batch {batchNumber} - {e.Message}");
+                _logger.LogInformation($"Error in synchronizing batch {batchNumber} of enrollments. {e.Message}");
+                LoggerLQ.LogQueue($"Error in synchronizing batch {batchNumber} - {e.Message}");
             }
-            //try
-            //{
-            //    var baseUri = 
-            //    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, baseUri + ConfigurationManager.AppSettings["CpiProjectsUri"] + Models.Authorization.userID.ToString());
-            //    request.Headers.Add("Authorization", "Bearer " + Models.Authorization._cpiToken);
-            //    HttpResponseMessage result = await _cpiClient.SendAsync(request);
-            //    //if (result.IsSuccessStatusCode)
-            //    //{
-            //    //    var content = result.Content.ReadAsStringAsync().Result;
-            //    //    reJ = JsonConvert.DeserializeObject<CpiProject>(content);
-            //    //    CpiProject cpiProj = new CpiProject();
-            //    //    JsonConvert.PopulateObject(cpiProj, reJ);
-            //    //    return cpiProj;
-            //    //}
-            //}
-            //catch (Exception exc)
-            //{
-            //    if (exc.GetType().IsSubclassOf(typeof(Exception)))
-            //        throw;
-            //    Debug.WriteLine(exc.Message);
-            //}
-        }
-
-        public async Task UpdateProject(CpiProject project)
-        {
-
         }
     }
 }
