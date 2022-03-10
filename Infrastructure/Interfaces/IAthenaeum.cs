@@ -22,30 +22,6 @@ namespace MVCTesterCPI2.Infrastructure.Interfaces
         /// <returns>List of CPI Projects</returns>
         Task<HttpResponse<List<CpiProject>>> GetCPIProjectsList(string resourceUri, string userID, IDictionary<string, string> properties, int offset);
 
-        //=================================CRUD=================================================
-
-        /// <summary>
-        /// Updates Student Badge Record in the Badge System
-        /// </summary>
-        /// <param name="id">Record Id</param>
-        /// <param name="dto">Student Badge DTO</param>
-        /// <returns></returns>
-        /// Task<ServerResponse> UpdateStudentBadge(string id, BadgeStudent dto);
-
-        /// <summary>
-        /// Creates a new Student Badge Record in the Badge System
-        /// </summary>
-        /// <param name="badgeStudent"></param>
-        /// <returns></returns>
-        /// Task<ServerResponse> CreateStudentBadge(BadgeStudent badgeStudent);
-
-        /// <summary>
-        /// Creates a new StudentHistorical Object Record in the Badge System
-        /// </summary>
-        /// <param name="shObj"></param>
-        /// <returns>Server Response</returns>
-        /// Task<ServerResponse> PostToStudentHistoricals(StudentHistorical shObj);
-
         //==================================Sprocs===============================================
         /// <summary>
         /// Runs main:DataRetentionPolicy
