@@ -21,12 +21,12 @@ namespace MVCTesterCPI2.Register
 
         public void Init(HttpApplication httpApplication)
         {
-            //httpApplication.EndRequest += (src, args) =>
-            //{
-            //    HttpContext ctx = HttpContext.Current;
-            //    ctx.Response.Write(string.Format("<div class='alert alert-success'>URL: {0} Status: {1}</div>",
-            //        ctx.Request.RawUrl, ctx.Response.StatusCode));
-            //};
+            httpApplication.EndRequest += (src, args) =>
+            {
+               HttpContext ctx = HttpContext.Current;
+               ctx.Response.Write(string.Format("<div class='alert alert-success'>URL: {0} Status: {1}</div>",
+                   ctx.Request.RawUrl, ctx.Response.StatusCode));
+            };
             EventHandlerTaskAsyncHelper facilitateAsync = new EventHandlerTaskAsyncHelper(InitiateAuthorization);
             httpApplication.AddOnPostAuthenticateRequestAsync(facilitateAsync.BeginEventHandler, facilitateAsync.EndEventHandler);
         }
