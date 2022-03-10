@@ -146,7 +146,6 @@ namespace MVCTesterCPI2.Infrastructure
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"Error in synchronizing batch {batchNumber} of enrollments. {e.Message}");
                 LoggerLQ.LogQueue($"Error in synchronizing batch {batchNumber} - {e.Message}");
             }
 
