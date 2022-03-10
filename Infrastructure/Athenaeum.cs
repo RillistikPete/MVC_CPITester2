@@ -28,21 +28,30 @@ namespace MVCTesterCPI2.Infrastructure
         {
             return await _cpiClient.GetListById<CpiProject>(resourceUri, userID, properties);
         }
+        
+        public async Task<HttpResponse<CpiProject>> GetCPIProject(string resourceUri, int projId, string userID, IDictionary<string, string> properties, int offset)
+        {
+            return await _cpiClient.GetById<CpiProject>(resourceUri, projId, userID, properties);
+        }
         #endregion
 
         #region CRUD
+        public async Task<ServerResponse> EditProject(string resourceUri, CpiProject dto)
+        {
+            return await _cpiClient.Post(resourceUri, dto);
+        }
         #endregion
 
         #region Data Retention Policy and GFI
-        //public async Task<DataRetentionPolicy> RunDataRetentionPolicyOnComplete()
-        //{
-        //    return await _cpiClient.GetData("main:DataRetentionPolicy");
-        //}
+        public async Task<DataRetentionPolicy> RunDataRetentionPolicyOnComplete()
+        {
+           return await _cpiClient.GetData("main:DataRetentionPolicy");
+        }
 
-        //public async Task<UpdGFIonPersonsPolicy> RunUpdGFIonPersons()
-        //{
-        //    return await _cpiClient.GetGFI("main:updGFIonPersons");
-        //}
+        public async Task<UpdGFIonPersonsPolicy> RunUpdGFIonPersons()
+        {
+           return await _cpiClient.GetGFI("main:updGFIonPersons");
+        }
         #endregion
     }
 }
