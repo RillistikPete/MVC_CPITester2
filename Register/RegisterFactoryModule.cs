@@ -31,10 +31,9 @@ namespace MVCTesterCPI2.Register
                 c.BaseAddress = new Uri(cpiBaseUri);
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             });
-            //services.AddMvc();
             services.AddScoped<IAthenaeum, Athenaeum>();
             services.AddScoped<ICpiClient, CpiClientBase>();
-            // services.AddDbContextPool<LogContext>(options => options.UseSqlServer(_config.GetConnectionString("LocalExpressDb")));
+            services.AddDbContextPool<LogContext>(options => options.UseSqlServer(_config.GetConnectionString("LocalExpressDb")));
         }
     }
 }
