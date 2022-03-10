@@ -4,6 +4,6 @@
 Provides a simple user interface to replace the need of direct API requests using external REST clients.
 Built using asynchronous methods and Microsoft.OWIN to implement .NET Core tools inside .NET Framework.
 
-**See OWIN Configuration in Global.asax.cs**
+**See OWIN Configuration in WebStartup.cs**
 
 **Setup - ProjectController.cs / EntityUpdater.Business.cs**
