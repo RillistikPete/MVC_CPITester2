@@ -17,7 +17,6 @@ namespace MVCTesterCPI2.Controllers
         {
             EntityUpdater updater = new EntityUpdater(new Athenaeum(new CpiClientBase(Authorization._cpiClient)));
             List<Models.CpiProject> projectList = new List<Models.CpiProject>();
-            // projectList = await _entityUpdater.GetCPIProjects();
             projectList = await updater.GetCPIProjects();
             return View(projectList);
         }
