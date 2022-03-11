@@ -29,10 +29,9 @@ namespace MVCTesterCPI2
                 c.BaseAddress = new Uri(cpiBaseUri);
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
             }).AddPolicyHandler(RetryPolicy()).AddPolicyHandler(FallbackPolicy());
-            //services.AddMvc();
             services.AddScoped<IAthenaeum, Athenaeum>();
             services.AddScoped<ICpiClient, CpiClientBase>();
-            // services.AddDbContextPool<LogContext>(options => options.UseSqlServer(_config.GetConnectionString("LocalExpressDb")));
+            services.AddDbContextPool<LogContext>(options => options.UseSqlServer(_config.GetConnectionString("LocalExpressDb")));
         }
 
         private IAsyncPolicy<HttpResponseMessage> RetryPolicy()
